@@ -1,72 +1,78 @@
-# Jiomart-Website-Scraper
-🛏️ Jiomart Bedding Scraper
-This Python script uses Selenium and BeautifulSoup to scrape bedding products from JioMart. It extracts essential product details like title, price, image URL, discount, and product page link.
+# 🛏️ Jiomart Bedding Scraper
 
-📌 Features
-Headless browser automation using Selenium
+This project is a web scraper built with **Selenium** and **BeautifulSoup** to extract bedding product listings from [JioMart Bedding Section](https://www.jiomart.com/c/homeandkitchen/home-furnishing/bedding/31421). It scrolls the page, waits for elements to load, and extracts details like product title, price, discount, and more.
 
-Scrolls through the product page to load more items
+## 🚀 Features
 
-Parses product cards using BeautifulSoup
+- ✅ Headless browser scraping using Selenium  
+- ✅ Simulates scrolling to load more products  
+- ✅ Parses product details with BeautifulSoup  
+- ✅ Collects:
+  - Product title
+  - Price
+  - Product URL
+  - Image link
+  - Discount (if any)
+  - Raw product text
 
-Extracts:
+## 🧰 Requirements
 
-Product title
+Install the required packages:
 
-Price
-
-Product link
-
-Image URL
-
-Discount (if available)
-
-Combined product text
-
-🛠️ Dependencies
-Install the following Python libraries before running the script:
-
-bash
-Copy
-Edit
 pip install selenium beautifulsoup4
-Also, make sure you have Chrome and ChromeDriver installed and accessible via your system's PATH.
 
-🚀 How to Use
-Clone or download the script.
-
-Run the function scrape_jiomart_bedding() in your Python environment.
-
-The function returns a list of dictionaries, each containing product details.
-
-Example
-python
+markdown
 Copy
 Edit
-from jiomart_scraper import scrape_jiomart_bedding
+
+Make sure **Google Chrome** and the corresponding version of **ChromeDriver** are installed and accessible in your system's PATH.
+
+## 📄 Usage
+
+```python
+from scraper import scrape_jiomart_bedding
 
 products = scrape_jiomart_bedding()
+
 for product in products:
     print(product)
-📦 Output Format
-Each dictionary in the returned list contains:
+📝 Output Example
+Each product is returned as a dictionary:
 
 python
 Copy
 Edit
 {
-    "product_title": "Example Bedding Set",
-    "product_price": "₹999",
-    "product_link": "https://www.jiomart.com/p/example",
+    "product_title": "Floral Cotton Double Bedsheet",
+    "product_price": "₹799",
+    "product_link": "https://www.jiomart.com/p/example-product",
     "product_image_link": "https://example.com/image.jpg",
     "product_rating": "N/A",
-    "product_discount": "20% OFF",
-    "product_text": "Full description text extracted from the card"
+    "product_discount": "15% OFF",
+    "product_text": "Floral Cotton Double Bedsheet ₹799 15% OFF"
 }
-📋 Notes
-Ratings are currently set to "N/A" as they are not available on the Jiomart site.
+⚠️ Disclaimer
+This script is for educational and personal research use only.
 
-If Jiomart changes its site structure, the scraper may need to be updated.
+Frequent scraping may violate JioMart's Terms of Service.
 
-📄 License
-This project is for educational and research purposes only.
+Always respect robots.txt and rate-limit your requests.
+
+📌 To Do
+ Add CSV/JSON export
+
+ Implement pagination-based loading
+
+ Add support for other JioMart categories
+
+📃 License
+MIT License © 2025
+Feel free to fork, modify, and use this script responsibly.
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know if you want the same in `.md` file format or need additional badges (e.g. Python version, license, etc.) f
